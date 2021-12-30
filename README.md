@@ -10,7 +10,9 @@ If you like my work, please buy me a coffee. []\~(￣▽￣)\~*
 
 Download it with `npm`
 
-#### ```npm i react-dissolve```
+```
+npm i react-dissolve
+```
 
 ## How to use
 
