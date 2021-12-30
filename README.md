@@ -16,7 +16,7 @@ npm i react-dissolve
 
 ## How to use
 
-Import it to anywhere of your project.
+Import it to anywhere in your project.
 
 ```ts
 import DissolveEffect from "react-dissolve";
