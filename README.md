@@ -33,7 +33,7 @@ And BOOM! 🌟🌟🌟
 
 ## Props 🍞
 
-| Prop| Type | Default | Description |
+| Prop | Type | Default | Description |
 | --- | --- | --- | --- | --- |
 | animate | `always`\|`hover`\|`none` | `always` | When to animate |
 | animateMobile | `always`\|`hover`\|`none` | `none` | | The same as `animate` but only apply on mobile devices |
