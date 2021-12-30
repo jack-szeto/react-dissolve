@@ -1,6 +1,8 @@
 # React Dissolve
 
 A color and image animated dissolve effect. (❁´◡`❁)
+If you like my work, please buy me a coffee. []~(￣▽￣)~*
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jackszeto){:target="_blank"}
 
 ## Installation
 
