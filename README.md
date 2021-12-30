@@ -34,7 +34,7 @@ And BOOM! 🌟🌟🌟
 ## Props 🍞
 
 | Prop | Type | Default | Description |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | animate | `always`\|`hover`\|`none` | `always` | When to animate |
 | animateMobile | `always`\|`hover`\|`none` | `none` | | The same as `animate` but only apply on mobile devices |
 | breakpoint | number | `768` | The breackpoint(in px) for mobile |
