@@ -1,6 +1,8 @@
 # React Dissolve
 
-A color and image animated dissolve effect. (❁´◡`❁)
+A color and ~~image~~ animated dissolve effect. (❁´◡`❁)
+
+*image will add in future patch*
 
 If you like my work, please buy me a coffee. []\~(￣▽￣)\~*
 
