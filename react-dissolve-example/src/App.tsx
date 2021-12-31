@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import './App.scss';
-import DissolveEffect, {easing} from 'react-dissolve';
+import DissolveEffect from 'react-dissolve';
 import {FpsView} from "react-fps";
 
 function App() {
   const [handles, setHandles] = useState(true);
   console.log("DissolveEffect", DissolveEffect);
-  console.log("FpsView", FpsView);
-  console.log(easing);
-  console.log(useState);
   
   return (
     <div className="App">
