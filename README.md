@@ -2,15 +2,21 @@
 
 A color and image animated dissolve effect. (❁´◡`❁)
 
+If you like my work, please buy me a coffee. []\~(￣▽￣)\~*
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jackszeto)
+
 ## Installation
 
 Download it with `npm`
 
-### `npm i react-dissolve`
+```
+npm i react-dissolve
+```
 
 ## How to use
 
-Import it to anywhere of your project.
+Import it to anywhere in your project.
 
 ```ts
 import DissolveEffect from "react-dissolve";
@@ -41,11 +47,11 @@ And BOOM! 🌟🌟🌟
 | className | string | `undefined` | Class name |
 | color | string | `#40DECF` | The color of the effect |
 | debug | boolean | `false` | Debug mode will show some indicators of the effect |
-| fade | { innerEffect?: boolean, innerEdge?: number, outerEdge?: number, offset?: {x: number, y: number}, ease?: Ease,} | `undefined` | To control the effect. See below. |
+| fade | `{ innerEffect?: boolean, innerEdge?: number, outerEdge?: number, offset?: {x: number, y: number}, ease?: Ease,}` | `undefined` | To control the effect. See below. |
 | fade.innerEffect | boolean | `false` | Apply the dissolve effect within the inner circle |
 | fade.innerEdge | number | `0` | A inner circle where the dissolve effect start to fade |
 | fade.outerEdge | number | `1` | A outer circle where the dissolve effect end |
-| fade.offset | {x: number, y: number} | `{x: 0, y: 0}` | Offset of the center |
+| fade.offset | `{x: number, y: number}` | `{x: 0, y: 0}` | Offset of the center |
 | fade.ease | `linear`\|`easeIn`\|`easeOut`\|`easeInOut` | `linear` | Ease the fading |
 | frameRate | number | `30` | Frame rate of the effect\n can only update it on start |
 | handle | boolean | `false` | Toggle the handle so you can change most of the value runtime |
