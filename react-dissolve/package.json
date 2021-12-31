@@ -1,9 +1,13 @@
 {
   "name": "react-dissolve",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A color and image animated dissolve effect.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "keywords": [
+    "dissolve effect",
+    "react"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jack-szeto/react-dissolve"
