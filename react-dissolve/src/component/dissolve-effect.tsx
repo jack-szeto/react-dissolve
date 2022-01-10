@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SimplexNoise from 'simplex-noise';
 import Sketch from "react-p5";
 import p5Types from "p5";
@@ -17,6 +17,7 @@ export interface DissolveEffectProps {
     width: number,
     height: number,
     frameRate?: number,
+    src?: string,
     color?: string,
     threshold?: number,
     animate?: Animate,
@@ -41,6 +42,7 @@ const DissolveEffect: React.FC<DissolveEffectProps> = ({
     width, 
     height, 
     frameRate,
+    src, 
     color,
     threshold, 
     animate, 
@@ -73,6 +75,8 @@ const DissolveEffect: React.FC<DissolveEffectProps> = ({
     };
     const [_frameRate, set_frameRate] = useState(frameRate ?? 30);
     const [_threshold, set_threshold] = useState(clamp(threshold ?? 0.5, 0, 1));
+    const [_src, set_src] = useState<FileList|string|null|undefined>(src);
+    const [_img, set_img] = useState<p5Types.Image|null>(null);
     const [_color, set_color] = useState(color??"#40DECF");
     const cStr = colorString.get(_color);
     const [_animate, set_animate] = useState(animate ?? "always");
@@ -95,6 +99,11 @@ const DissolveEffect: React.FC<DissolveEffectProps> = ({
 
     const drawPicture = (p5: p5Types) => {
         p5.clear();
+        
+        if (_img) {
+            p5.background(_img);
+        }
+
         p5.loadPixels();
 
         for (let x = 0; x < width; x++) {
@@ -128,9 +137,11 @@ const DissolveEffect: React.FC<DissolveEffectProps> = ({
                 }
 
                 // apply the color
-                p5.pixels[index + 0] = cStr?.value[0] ?? 255;
-                p5.pixels[index + 1] = cStr?.value[1] ?? 255;
-                p5.pixels[index + 2] = cStr?.value[2] ?? 255;
+                if (!_img) {
+                    p5.pixels[index + 0] = cStr?.value[0] ?? 255;
+                    p5.pixels[index + 1] = cStr?.value[1] ?? 255;
+                    p5.pixels[index + 2] = cStr?.value[2] ?? 255;
+                }
                 p5.pixels[index + 3] = value * 255;
             }
         }
@@ -150,17 +161,26 @@ const DissolveEffect: React.FC<DissolveEffectProps> = ({
         }
     }
 
+    const play = (p5: p5Types) => {
+        drawPicture(p5);
+        setTime((t)=> t + 1 / p5.frameRate());
+    }
+
+    const preload = (p5: p5Types) => {
+        if (_src !== null) {
+            p5.loadImage(_src as string, img => {
+                set_img(img)
+                set_src(null);
+            });
+        }
+    }
+
     const setup = (p5: p5Types, canvasParentRef: Element) => {
 		p5.createCanvas(width, height).parent(canvasParentRef);
         p5.frameRate(_frameRate);
         p5.pixelDensity(1);
         drawPicture(p5);
 	};
-
-    const play = (p5: p5Types) => {
-        drawPicture(p5);
-        setTime((t)=> t + 1 / p5.frameRate());
-    }
 
 	const draw = (p5: p5Types) => {
         if (p5.frameCount <= 1) return;
@@ -178,12 +198,12 @@ const DissolveEffect: React.FC<DissolveEffectProps> = ({
     return (
         <div className={styles["react-dissolve-effect"]}>
             <div ref={ref} className={`${styles.wrapper} ${_debug?styles.debug:""}`}>
-                <Sketch setup={setup} draw={draw} className={`${styles.canvasParent} ${className}`} style={{...style as { [key: string]: number|string }}} />
+                <Sketch preload={preload} setup={setup} draw={draw} className={`${styles.canvasParent} ${className}`} style={{...style as { [key: string]: number|string }}} />
             </div>
             {handle && <div className={styles.handles}>
                 <h2>Handles</h2>
                 <div className={styles.handle}>
-                    <span>Debug</span>
+                    <span>🧨 Debug</span>
                     <input type={"checkbox"} onChange={(v) => set_debug(v.target.checked)} checked={_debug} />
                 </div>
                 <div className={styles.handle}>
