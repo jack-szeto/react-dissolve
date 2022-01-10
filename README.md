@@ -2,8 +2,6 @@
 
 A color and image animated dissolve effect. (❁´◡`❁)
 
-*image will add in future patch*
-
 If you like my work, please buy me a coffee. []\~(￣▽￣)\~*
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jackszeto)
