@@ -1,6 +1,6 @@
 # React Dissolve
 
-A color and ~~image~~ animated dissolve effect. (❁´◡`❁)
+A color and image animated dissolve effect. (❁´◡`❁)
 
 *image will add in future patch*
 
@@ -39,6 +39,10 @@ And BOOM! 🌟🌟🌟
 
 ![dissolve effect](dissolve-effect.gif)
 
+Image is supported now!
+
+![image dissolve effect](dissolve-effect-2.gif)
+
 ## Props 🍞
 
 | Prop | Type | Default | Description |
@@ -47,6 +51,7 @@ And BOOM! 🌟🌟🌟
 | animateMobile | `always`\|`hover`\|`none` | `none` | | The same as `animate` but only apply on mobile devices |
 | breakpoint | number | `768` | The breackpoint(in px) for mobile |
 | className | string | `undefined` | Class name |
+| src | string | `underfined` | Specifies the path to the image |
 | color | string | `#40DECF` | The color of the effect |
 | debug | boolean | `false` | Debug mode will show some indicators of the effect |
 | fade.innerEffect | boolean | `false` | Apply the dissolve effect within the inner circle |
