@@ -6,6 +6,10 @@ If you like my work, please buy me a coffee. []\~(￣▽￣)\~*
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jackszeto)
 
+## Live demo
+
+Check out the [Codesandbox live demo](https://codesandbox.io/s/react-dissolve-live-demo-4xyu6?file=/src/App.tsx)
+
 ## Installation
 
 Download it with `npm`
